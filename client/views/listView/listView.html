@@ -4,11 +4,11 @@
 			<form class="form-inline new-list-form">
 				  <div class="form-group">
 				    <label for="exampleInputName2"></label>
-				    <input type="text" class="form-control" id="exampleInputName2" placeholder="title">
+				    <input type="text" name='title' class="form-control" placeholder="title">
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputEmail2"></label>
-				    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="description">
+				    <input type="text" name='description' class="form-control" placeholder="description">
 				  </div>
 				  <button type="submit" class="btn btn-default">create</button>
 			</form>
@@ -16,12 +16,10 @@
 			{{#each listCollection}}
 			<li class='listViewEntry'>
 					<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i>
+					<div class="btn btn-xs btn-danger" id="delete">x</div>
+					<div class='btn btn-xs' id='edit'><a class='button-text' href="{{pathFor 'detailsView'}}">></a></div>
 			</li>
 			{{/each}}
 		</ul>
 	</div>
-</template>
-
-<template name='loading'>
-	<h2>loading...</h2>
 </template>

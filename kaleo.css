@@ -13,9 +13,19 @@
 }
 
 .new-list-form{
-	/*display: none;*/
+	display: none;
 }
 
 .listViewList{
 	margin-top: 1em;
+}
+
+/*BUTTON DESIGN*/
+.btn{
+	border-radius: 88px;
+	vertical-align: center;
+}
+
+.button-text{
+	color: black;
 }
