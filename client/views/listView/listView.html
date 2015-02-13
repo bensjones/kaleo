@@ -1,0 +1,13 @@
+<template name='listViewTemplate'>
+	<ul class='listViewList'>
+		{{#each listCollection}}
+		<li class='listViewEntry'>
+				<b>{{title}}</b>, {{description}}
+		</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name='loading'>
+	<h2>loading...</h2>
+</template>
