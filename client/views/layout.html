@@ -1,10 +1,16 @@
 <body>
 	{{renderPage}}
-	<h1>kaleo</h1>
 </body>
 
 <template name='layout'>
-	
+
+	<div class="layout-buttons">
+		{{> loginButtons }}
+		<h1>kaleo</h1>
+	</div>
+	 <div class="navbar">
+	 	<div class='btn'><a class='button-text' href="{{pathFor 'listView'}}">myKaleo</a></div>
+	 </div>
 	{{> yield}}
 	
 </template>

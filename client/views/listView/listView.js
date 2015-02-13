@@ -15,3 +15,10 @@ Template.listViewTemplate.helpers({
 		return listCollection.find();
 	}
 });
+
+Meteor.startup(function(){
+
+	$('#new-list-button').on('click', function(ev){
+		console.log('clicked');
+	})
+});

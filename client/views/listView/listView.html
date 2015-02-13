@@ -1,11 +1,25 @@
 <template name='listViewTemplate'>
-	<ul class='listViewList'>
-		{{#each listCollection}}
-		<li class='listViewEntry'>
-				<b>{{title}}</b>, {{description}}
-		</li>
-		{{/each}}
-	</ul>
+	<div class="container">
+		<div class='btn new-list' id='new-list-button'><a class='button-text'>new list</a></div>
+			<form class="form-inline new-list-form">
+				  <div class="form-group">
+				    <label for="exampleInputName2"></label>
+				    <input type="text" class="form-control" id="exampleInputName2" placeholder="title">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputEmail2"></label>
+				    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="description">
+				  </div>
+				  <button type="submit" class="btn btn-default">create</button>
+			</form>
+		<ul class='listViewList'>
+			{{#each listCollection}}
+			<li class='listViewEntry'>
+					<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
 </template>
 
 <template name='loading'>
