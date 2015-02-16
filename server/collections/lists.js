@@ -1,5 +1,9 @@
 //server/collections/lists.js
 
 Meteor.publish('lists', function(){
-	return listCollection.find();
+	if(this.userId){
+		console.log(this.userId);
+		return listCollection.find();
+		// return listCollection.find({owner: this.userId});
+	}
 });

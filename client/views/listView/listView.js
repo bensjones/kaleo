@@ -23,10 +23,12 @@ Template.listViewTemplate.events({
 		var newList = {
 			title: $(ev.target).find('[name=title]').val(),
 			description: $(ev.target).find('[name=description]').val(),
-			dateCreated: new Date()
+			dateCreated: new Date(),
+			owner: Meteor.userId()
 		}
 
-		listCollection.insert(newList);
+		// listCollection.insert(newList);
+		Meteor.call('addList', newList);
 
 		$('.form-group').children().val('');
 	},
