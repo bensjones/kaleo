@@ -13,10 +13,6 @@ Template.listViewTemplate.helpers({
 
 	listCollection: function(){
 		return listCollection.find();
-	},
-
-	editingDoc: function(){
-		return listCollection.findOne({id: Session.get('selectedDocId')});
 	}
 });
 
