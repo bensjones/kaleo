@@ -1,9 +1,11 @@
 <template name='detailsViewTemplate'>
 	<div class="container">
+		<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i>
 		<form class="form-inline new-detail-form">
 			  <div class="form-group">
-			    <input type="text" name='detail' class="form-control" placeholder="title">
+			    <input type="text" name='detail' class="form-control" placeholder="detail">
 			  </div>
+			  	<input type="text" name="parentId" value='{{_id}}'>
 			  <button type="submit" class="btn btn-default">add detail</button>
 		</form>
 	</div>
