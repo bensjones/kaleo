@@ -34,5 +34,12 @@ Template.detailsViewTemplate.events({
 
 		Meteor.call('addDetail', detailFormData);
 		$('.form-group').children().val('');
+	},
+
+	'click #delete-detail': function(ev){
+		ev.preventDefault();
+
+		console.log(this._id);
+		Meteor.call('deleteDetail', this._id);
 	}
 });
