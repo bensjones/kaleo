@@ -8,7 +8,7 @@ Router.route('detailsView', {
 	waitOn: function(){
 		return [
 			Meteor.subscribe('lists'),
-			Meteor.subscribe('details')
+			Meteor.subscribe('details', this.params._id)
 		]
 	},
 
@@ -26,7 +26,6 @@ Template.detailsViewTemplate.helpers({
 Template.detailsViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
-
 		var detailFormData = {
 			detail: $(ev.target).find('[name = detail]').val(),
 			parentId: $(ev.target).find('[name = parentId]').val()
@@ -38,8 +37,6 @@ Template.detailsViewTemplate.events({
 
 	'click #delete-detail': function(ev){
 		ev.preventDefault();
-
-		console.log(this._id);
 		Meteor.call('deleteDetail', this._id);
 	}
 });
