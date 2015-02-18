@@ -1,32 +1,33 @@
 <template name='listViewTemplate'>
 	<div class="container">
+		<div class="col-sm-8">
+			{{#unless currentUser}}
+				<div class="alert alert-error">
+				log in to access your kaleo
+				</div>
+				<h2 class='login-welcome'>sign in above to access your kaleo</h2>
+			{{/unless}}
 
-		{{#unless currentUser}}
-			<div class="alert alert-error">
-			log in to access your kaleo
-			</div>
-			<h2 class='login-welcome'>sign in above to access your kaleo</h2>
-		{{/unless}}
-
-		<div class='btn new-list' id='new-list-button'><a class='button-text'>new list</a></div>
-			<form class="form-inline new-list-form">
-				  <div class="form-group">
-				    <input type="text" name='title' class="form-control" placeholder="title">
-				  </div>
-				  <div class="form-group">
-				    <input type="text" name='description' class="form-control" placeholder="description">
-				  </div>
-				  <button type="submit" class="btn btn-default">create</button>
-			</form>
-		<ul class='listViewList'>
-			{{#each listCollection}}
-			<li class='listViewEntry'>
-					<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i>
-					<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
-					<div class="btn btn-xs btn-danger" id="delete-list">x</div>
-					<div class='btn btn-xs btn-success' id='edit'><a class='button-text-white' href="{{pathFor 'detailsView'}}">></a></div>
-			</li>
-			{{/each}}
-		</ul>
+				<a class='button-text btn new-list' id='new-list-button'>new list</a>
+				<form class="form-inline new-list-form">
+					  <div class="form-group">
+					    <input type="text" name='title' class="form-control" placeholder="title">
+					  </div>
+					  <div class="form-group">
+					    <input type="text" name='description' class="form-control" placeholder="description">
+					  </div>
+					  <button type="submit" class="btn btn-default">create</button>
+				</form>
+			<ul class='listViewList'>
+				{{#each listCollection}}
+				<li class='listViewEntry'>
+						<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i>
+						<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
+						<div class="btn btn-xs btn-danger" id="delete-list">x</div>
+						<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
 </template>

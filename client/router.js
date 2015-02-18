@@ -7,7 +7,9 @@ Router.configure({
 
 var requireLogin = function() {
 	if (! Meteor.user()){
-		this.render('login');
+		this.render('loginTemplate');
+	} else if (Meteor.loggingIn()) {
+		this.render('listViewTemplate')
 	} else {
 		this.next();
 	}
@@ -15,11 +17,20 @@ var requireLogin = function() {
 
 var signInRoute = function(){
 	if(!(Meteor.loggingIn() || Meteor.user())){
-		this.render('login');
+		this.render('loginTemplate');
 	} else {
 		this.next();
 	}
-};
+}
 
-Router.onBeforeAction(requireLogin, {except: 'login'});
-Router.onBeforeAction(signInRoute, {except: 'login'});
+var loggingIn = function(){
+	if(Meteor.loggingIn()){
+		this.render('listViewTemplate');
+	} else {
+		this.next();
+	}
+}
+
+Router.onBeforeAction(requireLogin);
+Router.onBeforeAction(signInRoute);
+Router.onBeforeAction(loggingIn);

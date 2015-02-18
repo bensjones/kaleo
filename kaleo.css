@@ -8,6 +8,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	opacity: 0.9;
 }
 
+.myKaleo{
+	margin-left: 6em;
+}
+
 /*LIST VIEW STYLING*/
 
 .layout-buttons, .new-list {
@@ -27,6 +31,10 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 .listViewList{
+	margin-top: 2em;
+}
+
+.listViewEntry{
 	margin-top: 1em;
 }
 
@@ -39,14 +47,19 @@ h1, h2, h3, .container, .btn, .button-text{
 	list-style-type: none;
 }
 
+.detailViewEntry{
+	margin-top: 2/3em;
+}
+
 /*BUTTON DESIGN*/
 .btn{
 	border-radius: 88px;
 	vertical-align: center;
 }
 
-.button-text{
+.myKaleo .button-text{
 	color: black;
+	opacity: 0.7;
 }
 
 .button-text-white{
