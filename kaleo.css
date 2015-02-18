@@ -24,6 +24,10 @@ ul{
 	list-style-type: none;
 }
 
+.detailViewList{
+	float: left;
+}
+
 /*BUTTON DESIGN*/
 .btn{
 	border-radius: 88px;

@@ -6,7 +6,10 @@ Router.route('detailsView', {
 	template: 'detailsViewTemplate',
 	loadingTemplate: 'loading',
 	waitOn: function(){
-		return Meteor.subscribe('lists');
+		return [
+			Meteor.subscribe('lists'),
+			Meteor.subscribe('details')
+		]
 	},
 
 	data: function(){
@@ -15,9 +18,8 @@ Router.route('detailsView', {
 });
 
 Template.detailsViewTemplate.helpers({
-
 	detailsCollection: function(){
-		return detailCollection.find();
+		return detailsCollection.find();
 	}
 });
 
@@ -25,11 +27,12 @@ Template.detailsViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
 
-		var newDetail = {
+		var detailFormData = {
 			detail: $(ev.target).find('[name = detail]').val(),
 			parentId: $(ev.target).find('[name = parentId]').val()
 		}
 
-		Meteor.call('newDetail', newDetail);
+		Meteor.call('addDetail', detailFormData);
+		$('.form-group').children().val('');
 	}
 });

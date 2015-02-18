@@ -21,6 +21,7 @@ Template.listViewTemplate.events({
 		ev.preventDefault();
 
 		var today = new Date();
+		
 		var newList = {
 			title: $(ev.target).find('[name=title]').val(),
 			description: $(ev.target).find('[name=description]').val(),
