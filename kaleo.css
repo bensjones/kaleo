@@ -1,3 +1,13 @@
+/*GENERAL STYLING*/
+
+body{
+	background-image: url('/bg.png')
+}
+
+h1, h2, h3, .container, .btn, .button-text{
+	opacity: 0.9;
+}
+
 /*LIST VIEW STYLING*/
 
 .layout-buttons, .new-list {
@@ -20,12 +30,13 @@
 	margin-top: 1em;
 }
 
-ul{
-	list-style-type: none;
-}
 
 .detailViewList{
 	float: left;
+}
+
+.listViewList li{
+	list-style-type: none;
 }
 
 /*BUTTON DESIGN*/

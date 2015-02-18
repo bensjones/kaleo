@@ -1,5 +1,13 @@
 <template name='listViewTemplate'>
 	<div class="container">
+
+		{{#unless currentUser}}
+			<div class="alert alert-error">
+			log in to access your kaleo
+			</div>
+			<h2 class='login-welcome'>sign in above to access your kaleo</h2>
+		{{/unless}}
+
 		<div class='btn new-list' id='new-list-button'><a class='button-text'>new list</a></div>
 			<form class="form-inline new-list-form">
 				  <div class="form-group">
