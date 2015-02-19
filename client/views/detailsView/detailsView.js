@@ -41,6 +41,13 @@ Template.detailsViewTemplate.events({
 	},
 
 	'click .detailCheckbox': function(ev){
-		$(this.detailViewEntry).css('opacity', 0.4);
+		var detail = $(ev.target).parent();
+
+		if(!detail.hasClass('toggle')){
+			detail.addClass('toggle');	
+		} else {
+			detail.removeClass('toggle');
+		}
+		
 	}
 });

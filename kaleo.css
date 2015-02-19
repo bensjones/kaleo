@@ -38,11 +38,6 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 1em;
 }
 
-
-.detailViewList{
-	float: left;
-}
-
 .listViewList li, .detailViewEntry{
 	list-style-type: none;
 }
@@ -53,6 +48,10 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .detailViewEntry .detailCheckbox{
 	margin-top: -1px;
+}
+
+.toggle{
+	opacity: 0.4;
 }
 
 
