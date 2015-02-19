@@ -12,7 +12,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-left: 6em;
 }
 
-/*LIST VIEW STYLING*/
+/*LIST/DETAIL VIEW STYLING*/
 
 .layout-buttons, .new-list {
 	margin-left: 1em;
@@ -43,13 +43,18 @@ h1, h2, h3, .container, .btn, .button-text{
 	float: left;
 }
 
-.listViewList li{
+.listViewList li, .detailViewEntry{
 	list-style-type: none;
 }
 
 .detailViewEntry{
 	margin-top: 2/3em;
 }
+
+.detailViewEntry .detailCheckbox{
+	margin-top: -1px;
+}
+
 
 /*BUTTON DESIGN*/
 .btn{

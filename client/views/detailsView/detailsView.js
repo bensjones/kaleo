@@ -38,5 +38,9 @@ Template.detailsViewTemplate.events({
 	'click #delete-detail': function(ev){
 		ev.preventDefault();
 		Meteor.call('deleteDetail', this._id);
+	},
+
+	'click .detailCheckbox': function(ev){
+		$(this.detailViewEntry).css('opacity', 0.4);
 	}
 });
