@@ -46,6 +46,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 2/3em;
 }
 
+.detailViewList{
+	margin-left: -0.5em;
+}
+
 .detailViewEntry .detailCheckbox{
 	margin-top: -1px;
 }
