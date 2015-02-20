@@ -14,6 +14,15 @@ Router.route('detailsView', {
 
 	data: function(){
 		return listCollection.findOne({_id: this.params._id});
+	},
+
+	action: function(){
+		var currentList = listCollection.findOne({_id: this.params._id});
+		if(typeof currentList == "undefined"){
+			this.redirect('listView');
+		} else {
+			this.render('detailsViewTemplate');	
+		}
 	}
 });
 

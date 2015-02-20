@@ -25,12 +25,10 @@ var signInRoute = function(){
 
 var loggingIn = function(){
 	if(Meteor.loggingIn()){
-		this.render('listViewTemplate');
-	} else {
-		this.next();
+		console.log('loggingingingg');
 	}
 }
 
 Router.onBeforeAction(requireLogin);
 Router.onBeforeAction(signInRoute);
-Router.onBeforeAction(loggingIn);
+// Router.onBeforeAction(loggingIn);
