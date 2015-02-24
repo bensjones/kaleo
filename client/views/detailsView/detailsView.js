@@ -46,6 +46,7 @@ Template.detailsViewTemplate.events({
 
 	'click #delete-detail': function(ev){
 		ev.preventDefault();
+		console.log(this._id);
 		Meteor.call('deleteDetail', this._id);
 	},
 
@@ -58,5 +59,11 @@ Template.detailsViewTemplate.events({
 			detail.removeClass('toggle');
 		}
 		
+	},
+
+	'click #delete-list': function(ev){
+		ev.preventDefault();
+
+		Meteor.call('deleteListAndDetails', this._id);
 	}
 });

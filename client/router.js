@@ -23,12 +23,6 @@ var signInRoute = function(){
 	}
 }
 
-var loggingIn = function(){
-	if(Meteor.loggingIn()){
-		console.log('loggingingingg');
-	}
-}
-
 Router.onBeforeAction(requireLogin);
 Router.onBeforeAction(signInRoute);
-// Router.onBeforeAction(loggingIn);
+
