@@ -35,7 +35,11 @@ Template.listViewTemplate.events({
 
 	'click #delete-list': function(ev){
 		ev.preventDefault();
-		Meteor.call('deleteList', this._id);
+
+		var result = confirm('do you want to delete this list?');
+		if(result){
+			Meteor.call('deleteList', this._id);
+		}
 	},
 
 	'click #new-list-button': function(ev){

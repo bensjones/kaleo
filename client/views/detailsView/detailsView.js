@@ -46,8 +46,12 @@ Template.detailsViewTemplate.events({
 
 	'click #delete-detail': function(ev){
 		ev.preventDefault();
-		console.log(this._id);
-		Meteor.call('deleteDetail', this._id);
+
+		var result = confirm("do you want to delete this detail?");
+		if (result){
+			Meteor.call('deleteDetail', this._id);
+		}
+		
 	},
 
 	'click .detailCheckbox': function(ev){
@@ -64,6 +68,9 @@ Template.detailsViewTemplate.events({
 	'click #delete-list': function(ev){
 		ev.preventDefault();
 
-		Meteor.call('deleteListAndDetails', this._id);
+		var result = confirm('do you want to delete this list and all of its details?')
+		if(result){
+			Meteor.call('deleteListAndDetails', this._id);
+		}
 	}
 });
