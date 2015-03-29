@@ -20,6 +20,8 @@ Template.listViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
 
+		console.log('form submitted');
+
 		var today = new Date();
 		
 		var newList = {
