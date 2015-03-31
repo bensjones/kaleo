@@ -52,5 +52,10 @@ Template.listViewTemplate.events({
 	'click #edit-list': function(ev){
 		ev.preventDefault();
 		$('.listViewEntry').attr('contentEditable', true);
+	},
+
+	'click #share_button': function(ev){
+		ev.preventDefault();
+		Meteor.call('returnUsers');
 	}
 })

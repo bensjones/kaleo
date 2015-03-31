@@ -8,3 +8,7 @@ Meteor.publish('lists', function(){
 		return listCollection.find({owner: this.userId});
 	}
 });
+
+Meteor.publish('users', function(){
+	console.log('hello');
+});
