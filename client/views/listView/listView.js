@@ -50,7 +50,10 @@ Template.listViewTemplate.events({
 
 	'click #new-list-button': function(ev){
 		ev.preventDefault();
-		$('.new-list-form').show();
+		if($('.new_list_form').css('display')=='none')
+			$('.new_list_form').css('display', 'inline-block');
+		else
+			$('.new_list_form').css('display', '');
 	},
 
 	'click #edit-list': function(ev){
@@ -72,12 +75,10 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		// if($('#usersList').hasAttr('visibilty: hidden')){
-		// 	console.log('has attr visible');
-		// } else {
-		// 	console.log('does not have attr visible');
-		// }
-		$('#usersList').attr('style', 'visibility: visible');
+		if($('#usersList').css('visibility')=='hidden')
+			$('#usersList').css('visibility', 'visible');
+		else
+			$('#usersList').css('visibility', 'hidden');
 	}
 })
 

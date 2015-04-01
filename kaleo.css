@@ -22,16 +22,17 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-left: 4em;
 }
 
-.new-list-form, .form-group{
+.new_list_form, .form-group{
 	padding: 1em;
 }
 
-.new-list-form{
+.new_list_form{
+	/*visibility: hidden;*/
 	display: none;
 }
 
 .listViewList{
-	margin-top: 2em;
+	margin-top: 1em;
 	float: left;
 }
 

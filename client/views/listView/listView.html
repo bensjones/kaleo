@@ -9,12 +9,15 @@
 			{{/unless}}
 
 				<a class='button-text btn new-list' id='new-list-button'>new list</a>
-				<form class="form-inline new-list-form">
+				<form class="form-inline new_list_form">
 					  <div class="form-group">
 					    <input type="text" name='title' class="form-control" placeholder="title">
 					  </div>
 					  <div class="form-group">
 					    <input type="text" name='description' class="form-control" placeholder="description">
+					  </div>
+					  <div class="form-group">
+					    <input type="hidden" name='shared_user' class="form-control">
 					  </div>
 					  <button type="submit" class="btn btn-default">create</button>
 					  <button type='button' class="btn btn-default" id='share_button'>share</button>
@@ -31,6 +34,7 @@
 					{{/each}}
 				</ul>
 				<ul id='usersList'>
+					<h3>choose a user to share list with</h3>
 					{{#each allUsers}}
 					<li id='users_to_choose'>
 						{{_id}}
