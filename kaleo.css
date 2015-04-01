@@ -80,6 +80,7 @@ h1, h2, h3, .container, .btn, .button-text{
 #usersList{
 	float: left;
 	margin-top: 2.5em;
+	visibility: hidden;
 }
 
 #usersList li{

@@ -60,22 +60,25 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		// Meteor.call('returnUsers', function(err, users){
-		// 	console.log(users);
-		// });
+		Meteor.call('returnUsers', function(err, users){
+			console.log(users);
+		});
 	},
 
 	'click .select_to_share': function(ev){
 		ev.preventDefault();
 		console.log(this._id);
+	},
+
+	'click #share_button': function(ev){
+		ev.preventDefault();
+		// if($('#usersList').hasAttr('visibilty: hidden')){
+		// 	console.log('has attr visible');
+		// } else {
+		// 	console.log('does not have attr visible');
+		// }
+		$('#usersList').attr('style', 'visibility: visible');
 	}
 })
-
-$(document).ready(function(){
-	$('.btn').on('click', function(){
-		console.log('share button clicked');
-		$('#usersList').hide();
-	})
-});
 
 
