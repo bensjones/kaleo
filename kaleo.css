@@ -32,6 +32,7 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .listViewList{
 	margin-top: 2em;
+	float: left;
 }
 
 .listViewEntry{
@@ -72,4 +73,16 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .button-text-white{
 	color: white;
+}
+
+/*SHARE WITH USER*/
+
+#usersList{
+	float: left;
+	margin-top: 2.5em;
+}
+
+#usersList li{
+	padding-bottom: 1em;
+	list-style-type: none;
 }

@@ -13,7 +13,7 @@ Meteor.publish('users', function(){
 	// this.added(collection, id, fields)
 
 	// var selector = {};
- //  	var options = {fields: {username: 1}};
- //  	return Meteor.users.find(selector, options).fetch();
+ 	//  var options = {fields: {username: 1}};
+ 	//  return Meteor.users.find(selector, options).fetch();
 	return Meteor.users.find();
 });

@@ -15,6 +15,10 @@ Template.listViewTemplate.helpers({
 
 	listCollection: function(){
 		return listCollection.find();
+	},
+
+	allUsers: function(){
+		return Meteor.users.find();
 	}
 });
 
@@ -56,9 +60,16 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		// Meteor.call('returnUsers', function(err, users){
-		// 	console.log(users);
-		// });
-		Meteor.subscribe('users');
+		Meteor.call('returnUsers', function(err, users){
+			console.log(users);
+		});
+	},
+
+	'click .select_to_share': function(ev){
+		ev.preventDefault();
+		console.log(this._id);
 	}
 })
+
+
+
