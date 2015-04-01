@@ -16,3 +16,4 @@ iron:router
 jquery
 twbs:bootstrap
 reactive-var
+manuel:reactivearray

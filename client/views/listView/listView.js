@@ -9,27 +9,10 @@ Router.route('listView', {
 	}
 });
 
-Template.listViewTemplate.created = function (){
-    var self = this;
-    self.myAsyncValue = new ReactiveVar([]);
-    Meteor.call('returnUsers', function (err, users) {
-        if (err)
-            console.log(err);
-        else 
-        	// console.log(users);
-            self.myAsyncValue.set(users);
-    });
-}
-
 Template.listViewTemplate.helpers({
 
 	listCollection: function(){
 		return listCollection.find();
-	},
-
-	userCollection: function(){
-		console.log(Template.instance().myAsyncValue.get());
-		return Template.instance().myAsyncValue.get();
 	}
 });
 
