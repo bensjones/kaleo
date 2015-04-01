@@ -5,7 +5,9 @@ Router.route('listView', {
 	template: 'listViewTemplate',
 	loadingTemplate: 'loading',
 	waitOn: function(){
-		return Meteor.subscribe('lists');
+		return [Meteor.subscribe('users'),
+		Meteor.subscribe('lists')
+		];
 	}
 });
 
@@ -54,8 +56,9 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		Meteor.call('returnUsers', function(err, users){
-			console.log(users);
-		});
+		// Meteor.call('returnUsers', function(err, users){
+		// 	console.log(users);
+		// });
+		Meteor.subscribe('users');
 	}
 })
