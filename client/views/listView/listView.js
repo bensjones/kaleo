@@ -16,6 +16,7 @@ Template.listViewTemplate.created = function (){
         if (err)
             console.log(err);
         else 
+        	// console.log(users);
             self.myAsyncValue.set(users);
     });
 }
@@ -27,6 +28,7 @@ Template.listViewTemplate.helpers({
 	},
 
 	userCollection: function(){
+		console.log(Template.instance().myAsyncValue.get());
 		return Template.instance().myAsyncValue.get();
 	}
 });
@@ -34,8 +36,6 @@ Template.listViewTemplate.helpers({
 Template.listViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
-
-		console.log('form submitted');
 
 		var today = new Date();
 		
