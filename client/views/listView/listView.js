@@ -11,7 +11,7 @@ Router.route('listView', {
 
 Template.listViewTemplate.created = function (){
     var self = this;
-    self.myAsyncValue = new ReactiveVar("Waiting for response from server...");
+    self.myAsyncValue = new ReactiveVar([]);
     Meteor.call('returnUsers', function (err, users) {
         if (err)
             console.log(err);
