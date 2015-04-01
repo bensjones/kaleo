@@ -9,10 +9,25 @@ Router.route('listView', {
 	}
 });
 
+Template.listViewTemplate.created = function (){
+    var self = this;
+    self.myAsyncValue = new ReactiveVar("Waiting for response from server...");
+    Meteor.call('returnUsers', function (err, users) {
+        if (err)
+            console.log(err);
+        else 
+            self.myAsyncValue.set(users);
+    });
+}
+
 Template.listViewTemplate.helpers({
 
 	listCollection: function(){
 		return listCollection.find();
+	},
+
+	userCollection: function(){
+		return Template.instance().myAsyncValue.get();
 	}
 });
 
@@ -56,6 +71,8 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		Meteor.call('returnUsers');
+		Meteor.call('returnUsers', function(err, users){
+			console.log(users);
+		});
 	}
 })
