@@ -32,7 +32,8 @@ Template.listViewTemplate.events({
 			title: $(ev.target).find('[name=title]').val(),
 			description: $(ev.target).find('[name=description]').val(),
 			dateCreated: today.toDateString(),
-			owner: Meteor.userId()
+			owner: Meteor.userId(),
+			shared_user: $(ev.target).find('[name=shared_user]').val()
 		}
 
 		Meteor.call('addList', newList);
@@ -51,7 +52,7 @@ Template.listViewTemplate.events({
 	'click #new-list-button': function(ev){
 		ev.preventDefault();
 		if($('.new_list_form').css('display')=='none')
-			$('.new_list_form').css('display', 'inline-block');
+			$('.new_list_form').css('display', 'block');
 		else
 			$('.new_list_form').css('display', '');
 	},
@@ -61,17 +62,12 @@ Template.listViewTemplate.events({
 		$('.listViewEntry').attr('contentEditable', true);
 	},
 
-	'click #share_button': function(ev){
-		ev.preventDefault();
-		Meteor.call('returnUsers', function(err, users){
-			console.log(users);
-		});
-	},
-
-	'click .select_to_share': function(ev){
-		ev.preventDefault();
-		console.log(this._id);
-	},
+	// 'click #share_button': function(ev){
+	// 	ev.preventDefault();
+	// 	Meteor.call('returnUsers', function(err, users){
+	// 		console.log(users);
+	// 	});
+	// },
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
@@ -79,7 +75,12 @@ Template.listViewTemplate.events({
 			$('#usersList').css('visibility', 'visible');
 		else
 			$('#usersList').css('visibility', 'hidden');
+	},
+
+	'click .select_to_share': function(ev){
+		ev.preventDefault();
+		console.log(this._id);
+		shared_user_input = document.getElementById('shared_user_field');
+		shared_user_input.value = this._id;
 	}
 })
-
-

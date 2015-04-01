@@ -24,10 +24,10 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .new_list_form, .form-group{
 	padding: 1em;
+	margin-bottom: -2em;
 }
 
 .new_list_form{
-	/*visibility: hidden;*/
 	display: none;
 }
 
@@ -76,15 +76,22 @@ h1, h2, h3, .container, .btn, .button-text{
 	color: white;
 }
 
-/*SHARE WITH USER*/
+.btn_style{
+	border: 2px solid rgba(0, 0, 0, .5);
+}
+
+/*SHARE WITH USERS*/
 
 #usersList{
 	float: left;
-	/*margin-top: 2.5em;*/
 	visibility: hidden;
 }
 
 #usersList li{
 	padding-bottom: 1em;
 	list-style-type: none;
+}
+
+.new_list_form{
+	padding-bottm: -2em;
 }
