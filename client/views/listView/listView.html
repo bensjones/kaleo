@@ -26,10 +26,17 @@
 				<ul class='listViewList'>
 					{{#each listCollection}}
 					<li class='listViewEntry'>
-							<b>{{title}}</b>: {{description}} <i>[created: {{dateCreated}}] </i> {{shared_user}}
+						<div class="row">
+							<h4>{{title}}</h4> {{description}} <i>[created: {{dateCreated}}] </i> {{shared_user}}
 							<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
 							<div class="btn btn-xs btn-danger" id="delete-list">x</div>
 							<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
+						</div>
+						{{#unless sharedUserField}}
+						<div class="row">
+							<u>shared_user</u>: {{shared_user}}
+						</div>
+						{{/unless}}
 					</li>
 					{{/each}}
 				</ul>

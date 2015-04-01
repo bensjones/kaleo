@@ -19,6 +19,10 @@ Template.listViewTemplate.helpers({
 
 	allUsers: function(){
 		return Meteor.users.find();
+	},
+
+	sharedUserField: function(){
+		return document.getElementById('shared_user_field') == '';
 	}
 });
 

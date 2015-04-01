@@ -83,6 +83,8 @@ h1, h2, h3, .container, .btn, .button-text{
 /*SHARE WITH USERS*/
 
 #usersList{
+	padding-top: 1em;
+	padding-left: 2em;
 	float: left;
 	visibility: hidden;
 }
