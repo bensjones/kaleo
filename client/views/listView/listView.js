@@ -59,6 +59,7 @@ Template.listViewTemplate.events({
 			$('.new_list_form').css('display', 'block');
 		else
 			$('.new_list_form').css('display', '');
+			$('#usersList').css('visibility', 'hidden');
 	},
 
 	'click #edit-list': function(ev){
