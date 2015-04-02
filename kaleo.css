@@ -83,15 +83,20 @@ h1, h2, h3, .container, .btn, .button-text{
 /*SHARE WITH USERS*/
 
 #usersList{
-	padding-top: 1em;
-	padding-left: 2em;
-	float: left;
+	padding-top: 2.66em;
+	padding-right: 38em;
+	float: right;
+	text-align: center;
 	visibility: hidden;
 }
 
 #usersList li{
 	padding-bottom: 1em;
 	list-style-type: none;
+}
+
+#share_with_user_text{
+	margin-bottom: 1em;
 }
 
 .new_list_form{
