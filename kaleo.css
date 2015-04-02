@@ -99,6 +99,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-bottom: 1em;
 }
 
+#shared_user_field{
+	display: none;
+}
+
 .new_list_form{
 	padding-bottm: -2em;
 }

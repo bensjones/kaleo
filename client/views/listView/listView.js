@@ -76,10 +76,13 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		if($('#usersList').css('visibility')=='hidden')
+		if($('#usersList').css('visibility')=='hidden'){
 			$('#usersList').css('visibility', 'visible');
-		else
+			$('#shared_user_field').css('display', 'block');
+		}else{
 			$('#usersList').css('visibility', 'hidden');
+			$('#shared_user_field').css('display', 'none');
+		}
 	},
 
 	'click .select_to_share': function(ev){
