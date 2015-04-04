@@ -5,7 +5,8 @@ Router.route('listView', {
 	template: 'listViewTemplate',
 	loadingTemplate: 'loading',
 	waitOn: function(){
-		return [Meteor.subscribe('users'),
+		return [
+		Meteor.subscribe('users'),
 		Meteor.subscribe('lists')
 		];
 	}
@@ -19,6 +20,10 @@ Template.listViewTemplate.helpers({
 
 	allUsers: function(){
 		return Meteor.users.find();
+	},
+
+	sharedLists: function(){
+		return listCollection.find({shared_user: 'QYtZbo7oAt7Rmavv3'});
 	},
 
 	sharedUserField: function(){
@@ -67,12 +72,12 @@ Template.listViewTemplate.events({
 		$('.listViewEntry').attr('contentEditable', true);
 	},
 
-	// 'click #share_button': function(ev){
-	// 	ev.preventDefault();
-	// 	Meteor.call('returnUsers', function(err, users){
-	// 		console.log(users);
-	// 	});
-	// },
+	'click #users_button': function(ev){
+		ev.preventDefault();
+		Meteor.call('returnUsers', function(err, users){
+			console.log(users);
+		});
+	},
 
 	'click #share_button': function(ev){
 		ev.preventDefault();

@@ -1,7 +1,8 @@
 /*GENERAL STYLING*/
 
 body{
-	background-image: url('/bg.png')
+	background-image: url('/bg.png');
+	height: 1000px;
 }
 
 h1, h2, h3, .container, .btn, .button-text{
@@ -40,7 +41,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 1em;
 }
 
-.listViewList li, .detailViewEntry{
+.listViewList li, .detailViewEntry, .sharedListsList{
 	list-style-type: none;
 }
 
