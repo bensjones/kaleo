@@ -23,7 +23,7 @@ Template.listViewTemplate.helpers({
 	},
 
 	sharedLists: function(){
-		return listCollection.find({shared_user: 'QYtZbo7oAt7Rmavv3'});
+		return listCollection.find({shared_user: Meteor.userId()});
 	},
 
 	sharedUserField: function(){
