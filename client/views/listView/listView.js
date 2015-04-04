@@ -48,7 +48,7 @@ Template.listViewTemplate.events({
 		Meteor.call('addList', newList);
 		$('.form-group').children().val('');
 		$('.new_list_form').css('display', '');
-		$('#usersList').css('visibility', 'hidden');
+		$('#usersList').css('display', 'none');
 	},
 
 	'click #delete-list': function(ev){
@@ -66,7 +66,7 @@ Template.listViewTemplate.events({
 			$('.new_list_form').css('display', 'block');
 		else
 			$('.new_list_form').css('display', '');
-			$('#usersList').css('visibility', 'hidden');
+			$('#usersList').css('display', 'none');
 	},
 
 	'click #edit-list': function(ev){
@@ -83,11 +83,11 @@ Template.listViewTemplate.events({
 
 	'click #share_button': function(ev){
 		ev.preventDefault();
-		if($('#usersList').css('visibility')=='hidden'){
-			$('#usersList').css('visibility', 'visible');
+		if($('#usersList').css('display')=='none'){
+			$('#usersList').css('display', 'block');
 			$('#shared_user_field').css('display', 'block');
 		}else{
-			$('#usersList').css('visibility', 'hidden');
+			$('#usersList').css('display', 'none');
 			$('#shared_user_field').css('display', 'none');
 		}
 	},

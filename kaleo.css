@@ -61,6 +61,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	opacity: 0.4;
 }
 
+.users_list_row{
+	margin-top: -5em;
+}
+
 
 /*BUTTON DESIGN*/
 .btn{
@@ -85,10 +89,10 @@ h1, h2, h3, .container, .btn, .button-text{
 
 #usersList{
 	padding-top: 2.66em;
-	padding-right: 38em;
-	float: right;
-	text-align: center;
-	visibility: hidden;
+	/*padding-right: 38em;*/
+	/*float: right;*/
+	/*text-align: center;*/
+	display: none;
 }
 
 #usersList li{
