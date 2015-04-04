@@ -47,6 +47,8 @@ Template.listViewTemplate.events({
 
 		Meteor.call('addList', newList);
 		$('.form-group').children().val('');
+		$('.new_list_form').css('display', '');
+		$('#usersList').css('visibility', 'hidden');
 	},
 
 	'click #delete-list': function(ev){
