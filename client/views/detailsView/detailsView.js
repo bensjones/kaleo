@@ -8,7 +8,8 @@ Router.route('detailsView', {
 		return [
 			Meteor.subscribe('lists'),
 			Meteor.subscribe('sharedLists'),
-			Meteor.subscribe('details', this.params._id)
+			Meteor.subscribe('details', this.params._id),
+			Meteor.subscribe('sharedDetails', this.params._id)
 		]
 	},
 
