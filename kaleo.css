@@ -91,7 +91,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	padding-top: 2.66em;
 	padding-right: 38em;
 	float: right;
-	display: none;
+	visibility: hidden;
 }
 
 #usersList li{
