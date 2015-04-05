@@ -89,14 +89,13 @@ h1, h2, h3, .container, .btn, .button-text{
 
 #usersList{
 	padding-top: 2.66em;
-	/*padding-right: 38em;*/
-	/*float: right;*/
-	/*text-align: center;*/
+	padding-right: 38em;
+	float: right;
 	display: none;
 }
 
 #usersList li{
-	padding-bottom: 1em;
+	margin-top: 1em;
 	list-style-type: none;
 }
 
