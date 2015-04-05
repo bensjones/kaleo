@@ -7,7 +7,8 @@ Router.route('listView', {
 	waitOn: function(){
 		return [
 		Meteor.subscribe('users'),
-		Meteor.subscribe('lists')
+		Meteor.subscribe('lists'),
+		Meteor.subscribe('sharedLists')
 		];
 	}
 });
@@ -15,7 +16,7 @@ Router.route('listView', {
 Template.listViewTemplate.helpers({
 
 	listCollection: function(){
-		return listCollection.find();
+		return listCollection.find({owner: Meteor.userId()});
 	},
 
 	allUsers: function(){
