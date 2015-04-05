@@ -17,3 +17,8 @@ Meteor.publish('sharedLists', function(){
 Meteor.publish('users', function(){
 	return Meteor.users.find();
 });
+
+
+// var selector = {};
+// var options = {fields: {username: 1}};
+// return Meteor.users.find(selector, options).fetch();
