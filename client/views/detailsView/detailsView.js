@@ -1,13 +1,13 @@
 //client/views.detailsView.js
 
 Router.route('detailsView', {
-
 	path: '/details/:_id',
 	template: 'detailsViewTemplate',
 	loadingTemplate: 'loading',
 	waitOn: function(){
 		return [
 			Meteor.subscribe('lists'),
+			Meteor.subscribe('sharedLists'),
 			Meteor.subscribe('details', this.params._id)
 		]
 	},
