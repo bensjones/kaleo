@@ -48,18 +48,22 @@ Template.detailsViewTemplate.events({
 	'click #delete-detail': function(ev){
 		ev.preventDefault();
 
+		var result = confirm("do you want to delete this detail?");
+		if (result){
+			Meteor.call('deleteDetail', this._id);
+		}
+		
+	},
+
+	'click .detailCheckbox': function(ev){
 		var detail = $(ev.target).parent();
-		var delete_button = document.getElementById('delete-detail');
 
 		if(!detail.hasClass('toggle')){
-			detail.addClass('toggle');
-			$('#delete-detail').addClass('untoggle');
-			} else {
-				var result = confirm("do you want to delete this detail?");
-				if (result){
-					Meteor.call('deleteDetail', this._id);
-			}
+			detail.addClass('toggle');	
+		} else {
+			detail.removeClass('toggle');
 		}
+		
 	},
 
 	'click #delete-list': function(ev){
