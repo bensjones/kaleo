@@ -95,7 +95,7 @@ Template.listViewTemplate.events({
 
 	'click .select_to_share': function(ev){
 		ev.preventDefault();
-		shared_user_input = document.getElementById('shared_user_field');
+		var shared_user_input = document.getElementById('shared_user_field');
 		shared_user_input.value = this._id;
 	}
 })

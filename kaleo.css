@@ -3,6 +3,7 @@
 body{
 	background-image: url('/bg.png');
 	height: 1000px;
+	line-height: 1.2;
 }
 
 h1, h2, h3, .container, .btn, .button-text{
@@ -61,8 +62,16 @@ h1, h2, h3, .container, .btn, .button-text{
 	opacity: 0.4;
 }
 
+.untoggle{
+	opacity: 1;
+}
+
 .users_list_row{
 	margin-top: -5em;
+}
+
+.cross_browser_input_field{
+	moz-line-height: 20px;
 }
 
 
