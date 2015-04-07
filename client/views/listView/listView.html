@@ -20,77 +20,65 @@
 					    <input type="hidden" id='shared_user_field' name='shared_user' class="form-control" placeholder='shared_user'>
 					</div>
 					  <div class="btn-group" id='users_dropdown'>
-		                <button type="button" class="btn btn-default dropdown-toggle" name='shared_user' data-toggle="dropdown">users<span class="caret"></span></button>
+		                <button type="button" class="btn btn-default dropdown-toggle" name='shared_user' data-toggle="dropdown">share <span class="caret"></span></button>
 		                <ul class="dropdown-menu scrollable-menu shared_users_dropdown_toggle" role="menu">
 		                    {{#each allUsers}}
 		                    	<li class='shared_user_dropdown'><a href='#'>{{emails.[0].address}}</a></li>
 		                    {{/each}}
 		                </ul>
 		            </div>
-		            <!-- <div class="dropdown">
-		            	<button class="btn btn-default dropdown-toggle" type="button" name='shared_user' id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-		            		Users
-		            		<span class="caret"></span>
-		            	</button>
-		            	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		            		{{#each allUsers}}
-		            			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{emails.[0].address}}</a></li>
-		            		{{/each}}
-		            	</ul>
-		            </div> -->
 		            <button type="submit" class="btn btn-default">create</button>
-		            <!-- <button type='button' class="btn btn-default" id='share_button'>share</button> -->
-		            <button type='button' class="btn btn-default" id='users_button'>users</button>
-		        </form>
-		        <div class="row" id='users_list_row'>
-		        	<ul id='usersList'>
-		        		<u><h4 id='share_with_user_text'>share with user</h4></u>
-		        		{{#each allUsers}}
-		        		<li id='users_to_choose'>
-		        			{{emails.[0].address}}
-		        			<div class="btn btn-xs btn-primary select_to_share">select</div>
-		        		</li>
-		        		{{/each}}
-		        	</ul>
-		        	<ul class='listViewList'>
-		        		<u><h2>lists</h2></u>
-		        		{{#each listCollection}}
-		        		<li class='listViewEntry'>
-		        			<div class="row">
-		        				<h4>{{title}}</h4> {{description}} <i>[created: {{dateCreated}}] </i>
-		        				<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
-		        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
-		        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
-		        			</div>
-		        			<!-- {{#unless sharedUserField}} -->
-		        			<div class="row shared_user_row">
-		        				<u>shared_user</u>: {{shared_user}}
-		        			</div>
-		        			<!-- {{/unless}} -->
-		        		</li>
-		        		{{/each}}
-		        	</ul>
-		        </div>
-		        <div class="row">
-		        	<ul class='sharedListsList'>
-		        		<u><h2>shared lists</h2></u>
-		        		{{#each sharedLists}}
-		        		<li class='listViewEntry'>
-		        			<div class="row">
-		        				<h4>{{title}}</h4> {{description}} <i>[created: {{dateCreated}}] </i>
-		        				<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
-		        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
-		        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
-		        			</div>
-		        			<!-- {{#unless sharedUserField}} -->
-		        			<div class="row list_owner_row">
-		        				<u>list owner</u>: {{owner}}
-		        			</div>
-		        			<!-- {{/unless}} -->
-		        		</li>
-		        		{{/each}}
-		        	</ul>
-		        </div>
-		    </div>
-		</div>
-	</template>
+		            <!-- <button type='button' class="btn btn-default" id='users_button'>users</button> -->
+		    </form>
+	        <div class="row" id='users_list_row'>
+	        	<ul id='usersList'>
+	        		<u><h4 id='share_with_user_text'>share with user</h4></u>
+	        		{{#each allUsers}}
+	        		<li id='users_to_choose'>
+	        			{{emails.[0].address}}
+	        			<div class="btn btn-xs btn-primary select_to_share">select</div>
+	        		</li>
+	        		{{/each}}
+	        	</ul>
+	        	<ul class='listViewList'>
+	        		<u><h2>lists</h2></u>
+	        		{{#each listCollection}}
+	        		<li class='listViewEntry'>
+	        			<div class="row">
+	        				<h4>{{title}}</h4> {{description}} <i>[created: {{dateCreated}}] </i>
+	        				<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
+	        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
+	        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
+	        			</div>
+	        			<!-- {{#unless sharedUserField}} -->
+	        			<div class="row shared_user_row">
+	        				<u>shared_user</u>: {{shared_user}}
+	        			</div>
+	        			<!-- {{/unless}} -->
+	        		</li>
+	        		{{/each}}
+	        	</ul>
+	        </div>
+	        <div class="row">
+	        	<ul class='sharedListsList'>
+	        		<u><h2>shared lists</h2></u>
+	        		{{#each sharedLists}}
+	        		<li class='listViewEntry'>
+	        			<div class="row">
+	        				<h4>{{title}}</h4> {{description}} <i>[created: {{dateCreated}}] </i>
+	        				<!-- <div class="btn btn-xs" id="edit-list">e</div> -->
+	        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
+	        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
+	        			</div>
+	        			<!-- {{#unless sharedUserField}} -->
+	        			<div class="row list_owner_row">
+	        				<u>list owner</u>: {{owner}}
+	        			</div>
+	        			<!-- {{/unless}} -->
+	        		</li>
+	        		{{/each}}
+	        	</ul>
+	        </div>
+	    </div>
+	</div>
+</template>
