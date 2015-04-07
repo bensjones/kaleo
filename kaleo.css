@@ -101,6 +101,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-left: -2em;
 }
 
+#create_button{
+	margin-left: 1em;
+}
+
 /*SHARE WITH USERS*/
 
 #usersList{
