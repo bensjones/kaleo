@@ -102,18 +102,15 @@ Template.listViewTemplate.events({
 
 	'click .shared_users_dropdown_toggle li a': function(ev){
 		ev.preventDefault();
-		console.log($(this)._id);
+		console.log(this._id);
 	}
 })
 
 
-// $(document).ready(function(){
-// 	// $(document).on('click', '.dropdown-menu li a', function(ev){
-// 		ev.preventDefault();
-// 		$('.dropdown-menu').on('click', function(ev){
-
-// 		$(".dropdown-toggle:first-child").text($(this).text());
-//       	$(".dropdown-toggle:first-child").val($(this).text());
-//       	console.log($(ev.target)._id);
-// 	});
-// });
+$(document).ready(function(){
+	$(document).on('click', '.dropdown-menu li a', function(ev){
+		ev.preventDefault();
+		$(".dropdown-toggle:first-child").text($(this).text());
+      	$(".dropdown-toggle:first-child").val($(this).text());
+	});
+});
