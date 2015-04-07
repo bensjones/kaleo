@@ -64,7 +64,7 @@ Template.listViewTemplate.events({
 	'click #new-list-button': function(ev){
 		ev.preventDefault();
 		if($('.new_list_form').css('display')=='none'){
-			$('.new_list_form').css('display', 'inline-block');
+			$('.new_list_form').css('display', 'block');
 		}else{
 			$('.new_list_form').css('display', 'none');
 			$('#usersList').css('visibility', 'hidden');
