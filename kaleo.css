@@ -84,6 +84,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 0.5em;
 }
 
+.list_input_fields{
+	border-radius: 88px;
+}
+
 /*BUTTON DESIGN*/
 .btn{
 	border-radius: 88px;
@@ -100,6 +104,11 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 .btn_style{
+	border: 2px solid rgba(0, 0, 0, .5);
+}
+
+.btn_background{
+	background-image: url('/bg.png');
 	border: 2px solid rgba(0, 0, 0, .5);
 }
 

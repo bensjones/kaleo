@@ -8,3 +8,9 @@ Template.layout.events({
       	$(".dropdown-toggle:first-child").val('users');
 	}
 });
+
+Template.layout.helpers({
+	notifications: function(){
+		return notificationCollection.find({shared_user: this.userId()});
+	}
+});

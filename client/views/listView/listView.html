@@ -11,16 +11,16 @@
 			<a class='button-text btn new-list btn_style' id='new-list-button'>new list</a>
 			<form class="form-inline new_list_form">
 				<div class="form-group">
-					<input type="text" name='title' class="form-control cross_browser_input_field" placeholder="title">
+					<input type="text" name='title' class="form-control list_input_fields" placeholder="title">
 				</div>
 				<div class="form-group">
-					<input type="text" name='description' class="form-control cross_browser_input_field" placeholder="description">
+					<input type="text" name='description' class="form-control list_input_fields" placeholder="description">
 				</div>
 				  <div class="form-group">
 				    <input type="hidden" id='shared_user_field' name='shared_user' class="form-control" placeholder='shared_user'>
 				</div>
-				  <div class="btn-group" id='users_dropdown'>
-	                <button type="button" class="btn btn-default dropdown-toggle" name='shared_user' data-toggle="dropdown">share <span class="caret"></span></button>
+				<div class="btn-group" id='users_dropdown'>
+	                <button type="button" class="btn btn-default dropdown-toggle btn_background" name='shared_user' data-toggle="dropdown">share <span class="caret"></span></button>
 	                <ul class="dropdown-menu scrollable-menu shared_users_dropdown_toggle" role="menu">
 	                    {{#each allUsers}}
 	                    	<li class='shared_user_dropdown'><a href='#'>{{emails.[0].address}}</a></li>
