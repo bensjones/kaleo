@@ -8,9 +8,20 @@
 		{{> loginButtons }}
 		<h1>kaleo</h1>
 	</div>
-	 <div class="navbar myKaleo">
+	 <div class="navbar myKaleo row">
 	 	<a class='button-text btn btn_style' id='myKaleo_button' href="{{pathFor 'listView'}}"><b>myKaleo</b></a>
-	 	<a class='button-text btn btn_style' id='notifications_button'><b>notifications</b></a>
+	 	<div class="dropdown" id='notifications_dropdown'>
+		  <button class="btn btn-default btn_style button-text" type="button" data-toggle="dropdown" aria-expanded="true">
+		    notifications
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		    {{#each allUsers}}
+	            <li class='notification_dropdown'><a href='#'>{{emails.[0].address}}</a></li>
+	        {{/each}}
+		  </ul>
+		</div>
+	 	
 	 </div>
 	{{> yield}}
 	

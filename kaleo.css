@@ -12,6 +12,12 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .myKaleo{
 	margin-left: 6em;
+	margin-top: 1em;
+}
+
+#myKaleo_button, #notifications_dropdown{
+	float: left;
+	margin-left: 1em;
 }
 
 /*LIST/DETAIL VIEW STYLING*/
