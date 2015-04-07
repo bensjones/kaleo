@@ -20,6 +20,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-left: 1em;
 }
 
+.list_owner{
+	margin-top: 0.5em;
+}
+
 .navbar{
 	margin-left: 4em;
 }
@@ -70,8 +74,9 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: -5em;
 }
 
-.cross_browser_input_field{
-	moz-line-height: 20px;
+.dropdown-toggle{
+	margin-left: -1em;
+	padding-left: -1em;
 }
 
 
@@ -81,7 +86,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	vertical-align: center;
 }
 
-.myKaleo .button-text{
+.myKaleo .button-text, #new-list-button{
 	color: black;
 	opacity: 0.7;
 }

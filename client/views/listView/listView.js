@@ -98,5 +98,22 @@ Template.listViewTemplate.events({
 		ev.preventDefault();
 		var shared_user_input = document.getElementById('shared_user_field');
 		shared_user_input.value = this._id;
+	},
+
+	'click .shared_users_dropdown_toggle li a': function(ev){
+		ev.preventDefault();
+		console.log($(this)._id);
 	}
 })
+
+
+// $(document).ready(function(){
+// 	// $(document).on('click', '.dropdown-menu li a', function(ev){
+// 		ev.preventDefault();
+// 		$('.dropdown-menu').on('click', function(ev){
+
+// 		$(".dropdown-toggle:first-child").text($(this).text());
+//       	$(".dropdown-toggle:first-child").val($(this).text());
+//       	console.log($(ev.target)._id);
+// 	});
+// });
