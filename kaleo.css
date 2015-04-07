@@ -74,11 +74,9 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: -5em;
 }
 
-.dropdown-toggle{
-	margin-left: -1em;
-	padding-left: -1em;
+.shared_user_row, .list_owner_row{
+	margin-top: 0.5em;
 }
-
 
 /*BUTTON DESIGN*/
 .btn{
@@ -97,6 +95,10 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .btn_style{
 	border: 2px solid rgba(0, 0, 0, .5);
+}
+
+#users_dropdown{
+	margin-left: -2em;
 }
 
 /*SHARE WITH USERS*/

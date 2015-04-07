@@ -102,7 +102,8 @@ Template.listViewTemplate.events({
 
 	'click .shared_users_dropdown_toggle li a': function(ev){
 		ev.preventDefault();
-		console.log(this._id);
+		var shared_user_input = document.getElementById('shared_user_field');
+		shared_user_input.value = this._id;
 	}
 })
 
