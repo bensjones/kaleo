@@ -6,10 +6,16 @@ Tracker.autorun(function(){
 
 Template.layout.events({
 	'click #myKaleo_button': function(ev){
+		ev.preventDefault();
 		$('.new_list_form').css('display', 'none');
 		$('#usersList').css('visibility', 'hidden');
 		$(".dropdown-toggle:first-child").text('users');
       	$(".dropdown-toggle:first-child").val('users');
+	},
+
+	'click #delete-notification': function(ev){
+		ev.preventDefault();
+		Meteor.call('deleteNotification', this._id);
 	}
 });
 
