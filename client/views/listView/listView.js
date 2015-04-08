@@ -51,6 +51,8 @@ Template.listViewTemplate.events({
 			shared_user: $(ev.target).find('[name=shared_user]').val()
 		}
 
+		Meteor.call('addList', newList);
+		
 		if(!newList.shared_user == ''){
 			console.log('shared user is ' + newList.shared_user);
 			Meteor.call('addNotification', newList);
