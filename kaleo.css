@@ -145,3 +145,11 @@ h1, h2, h3, .container, .btn, .button-text{
 .new_list_form{
 	padding-bottm: -2em;
 }
+
+.delete_notification{
+	float: left;
+}
+
+.single_notification{
+	float: right;
+}
