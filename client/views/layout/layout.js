@@ -28,7 +28,7 @@ Template.layout.helpers({
 		return num == 2;
 	},
 
-	notificationsAreEmpty: function(){
+	notificationsExist: function(){
 		return notificationsCollection.find().count() != 0;
 	}
 });

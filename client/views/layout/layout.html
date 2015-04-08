@@ -10,7 +10,11 @@
 	</div>
 	 <div class="myKaleo navbar">
 	 	<a class='button-text btn btn_style' id='myKaleo_button' href="{{pathFor 'listView'}}"><b>myKaleo</b></a>
-	 		{{#if notificationsAreEmpty}}
+	 		{{#unless notificationsExist}}
+	 			<h4 id='no_notifications'>no notifications</h4>
+	 		{{/unless}}
+
+	 		{{#if notificationsExist}}
 			 	<div class="dropdown" id='notifications_dropdown'>
 				  <button class="btn btn-default btn_style button-text btn_background" type="button" data-toggle="dropdown" aria-expanded="true">
 				    notifications

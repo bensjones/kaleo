@@ -2,7 +2,7 @@
 
 body{
 	background-image: url('/bg.png');
-	height: 1000px;
+	height: 650px;
 	line-height: 1.2;
 }
 
@@ -18,6 +18,10 @@ h1, h2, h3, .container, .btn, .button-text{
 #myKaleo_button, #notifications_dropdown{
 	float: left;
 	margin-left: 1em;
+}
+
+.login-link-and-dropdown-list{
+	margin-top: 1em;
 }
 
 /*LIST/DETAIL VIEW STYLING*/
@@ -94,9 +98,14 @@ h1, h2, h3, .container, .btn, .button-text{
 	vertical-align: center;
 }
 
-.myKaleo .button-text, #new-list-button{
+.myKaleo .button-text, #new-list-button, #no_notifications{
 	color: black;
 	opacity: 0.7;
+}
+
+#no_notifications{
+	/*padding: 1em;*/
+	font-style: italic;
 }
 
 .button-text-white{
