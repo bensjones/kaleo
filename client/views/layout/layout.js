@@ -23,11 +23,6 @@ Template.layout.helpers({
 		return notificationsCollection.find({notified_user: Meteor.userId()});
 	},
 
-	testHelper: function(){
-		var num = 2;
-		return num == 2;
-	},
-
 	notificationsExist: function(){
 		return notificationsCollection.find().count() != 0;
 	}
