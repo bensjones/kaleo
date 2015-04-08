@@ -8,7 +8,7 @@
 		{{> loginButtons }}
 		<h1>kaleo</h1>
 	</div>
-	 <div class="navbar myKaleo row">
+	 <div class="myKaleo navbar">
 	 	<a class='button-text btn btn_style' id='myKaleo_button' href="{{pathFor 'listView'}}"><b>myKaleo</b></a>
 	 		{{#if notificationsCollection}}
 			 	<div class="dropdown" id='notifications_dropdown'>
@@ -18,7 +18,7 @@
 				  </button>
 				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 				    {{#each notificationsCollection}}
-			            <li class='notification_dropdown'><a href='#'>{{notified_user}}</a></li>
+			            <li><a href='#'><b>{{notified_user}}</b> shared a list</a></li>
 			        {{/each}}
 				  </ul>
 				</div>
