@@ -8,7 +8,8 @@ Router.route('listView', {
 		return [
 		Meteor.subscribe('users'),
 		Meteor.subscribe('lists'),
-		Meteor.subscribe('sharedLists')
+		Meteor.subscribe('sharedLists'),
+		Meteor.subscribe('notifications')
 		];
 	}
 });
@@ -29,6 +30,10 @@ Template.listViewTemplate.helpers({
 
 	sharedUserField: function(){
 		return document.getElementById('shared_user_field') == '';
+	},
+
+	notificationsCollection: function(){
+		return notificationsCollection.find({notified_user: Meteor.userId()});
 	}
 });
 
@@ -46,7 +51,11 @@ Template.listViewTemplate.events({
 			shared_user: $(ev.target).find('[name=shared_user]').val()
 		}
 
-		Meteor.call('addList', newList);
+		if(!newList.shared_user == ''){
+			console.log('shared user is ' + newList.shared_user);
+			Meteor.call('addNotification', newList);
+		}
+		
 		$('.form-group').children().val('');
 		$('.new_list_form').css('display', 'none');
 		$('#usersList').css('visibility', 'hidden');
