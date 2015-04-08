@@ -12,7 +12,7 @@ Template.layout.events({
       	$(".dropdown-toggle:first-child").val('users');
 	},
 
-	'click #delete-notification': function(ev){
+	'click .delete_notification': function(ev){
 		ev.preventDefault();
 		Meteor.call('deleteNotification', this._id);
 	}
@@ -21,5 +21,14 @@ Template.layout.events({
 Template.layout.helpers({
 	notificationsCollection: function(){
 		return notificationsCollection.find({notified_user: Meteor.userId()});
+	},
+
+	testHelper: function(){
+		var num = 2;
+		return num == 2;
+	},
+
+	notificationsAreEmpty: function(){
+		return notificationsCollection.find().count() != 0;
 	}
 });
