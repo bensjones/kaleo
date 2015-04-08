@@ -28,12 +28,12 @@ Template.listViewTemplate.helpers({
 		return listCollection.find({shared_user: Meteor.userId()});
 	},
 
-	sharedUserField: function(){
-		return document.getElementById('shared_user_field') == '';
-	},
-
 	notificationsCollection: function(){
 		return notificationsCollection.find({notified_user: Meteor.userId()});
+	},
+
+	sharedUserField: function(){
+		return listCollection.find({shared_user: ''});
 	}
 });
 

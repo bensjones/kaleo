@@ -41,7 +41,7 @@
 	        		{{/each}}
 	        	</ul>
 	        	<ul class='listViewList'>
-	        		<u><h2>lists</h2></u>
+	        		<u><h2>my lists</h2></u>
 	        		{{#each listCollection}}
 	        		<li class='listViewEntry'>
 	        			<div class="row">
@@ -50,18 +50,18 @@
 	        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
 	        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
 	        			</div>
-	        			<!-- {{#unless sharedUserField}} -->
+	        			{{#if sharedUserField}}
 	        			<div class="row shared_user_row">
-	        				<u>shared_user</u>: {{shared_user}}
+	        				<u>shared with</u>: {{shared_user}}
 	        			</div>
-	        			<!-- {{/unless}} -->
+	        			{{/if}}
 	        		</li>
 	        		{{/each}}
 	        	</ul>
 	        </div>
 	        <div class="row">
 	        	<ul class='sharedListsList'>
-	        		<u><h2>shared lists</h2></u>
+	        		<u><h2>shared with me</h2></u>
 	        		{{#each sharedLists}}
 	        		<li class='listViewEntry'>
 	        			<div class="row">
@@ -70,11 +70,9 @@
 	        				<div class="btn btn-xs btn-danger" id="delete-list">x</div>
 	        				<a class='button-text-white btn btn-xs btn-success' id="edit" href="{{pathFor 'detailsView'}}">></a>
 	        			</div>
-	        			<!-- {{#unless sharedUserField}} -->
 	        			<div class="row list_owner_row">
 	        				<u>list owner</u>: {{owner}}
 	        			</div>
-	        			<!-- {{/unless}} -->
 	        		</li>
 	        		{{/each}}
 	        	</ul>

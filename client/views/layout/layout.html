@@ -3,35 +3,36 @@
 </body>
 
 <template name='layout'>
-	
 	<div class="layout-buttons">
 		{{> loginButtons }}
 		<h1>kaleo</h1>
 	</div>
-	 <div class="myKaleo navbar">
-	 	<a class='button-text btn btn_style' id='myKaleo_button' href="{{pathFor 'listView'}}"><b>myKaleo</b></a>
-	 		{{#unless notificationsExist}}
-	 			<h4 id='no_notifications'>no notifications</h4>
-	 		{{/unless}}
+	{{#if isLoggedIn}}
+		 <div class="myKaleo navbar">
+		 	<a class='button-text btn btn_style' id='myKaleo_button' href="{{pathFor 'listView'}}"><b>myKaleo</b></a>
+		 		{{#unless notificationsExist}}
+		 			<h4 id='no_notifications'>no notifications</h4>
+		 		{{/unless}}
 
-	 		{{#if notificationsExist}}
-			 	<div class="dropdown" id='notifications_dropdown'>
-				  <button class="btn btn-default btn_style button-text btn_background" type="button" data-toggle="dropdown" aria-expanded="true">
-				    notifications
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-				    {{#each notificationsCollection}}
-				    	<div class="btn btn-xs btn-danger delete_notification">x</div>
-				    	<li>
-				    		<a class='notified_user' href='#'><b>{{notified_user}}</b> shared a list</a>
-				    	</li>
-				    	<hr>
-			        {{/each}}
-				  </ul>
-				</div>
-			{{/if}}
-	 </div>
+		 		{{#if notificationsExist}}
+				 	<div class="dropdown" id='notifications_dropdown'>
+					  <button class="btn btn-default btn_style button-text btn_background" type="button" data-toggle="dropdown" aria-expanded="true">
+					    notifications
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    {{#each notificationsCollection}}
+					    	<div class="btn btn-xs btn-danger delete_notification">x</div>
+					    	<li>
+					    		<a class='notified_user' href='#'><b>{{notified_user}}</b> shared a list</a>
+					    	</li>
+					    	<hr>
+				        {{/each}}
+					  </ul>
+					</div>
+				{{/if}}
+		 </div>
+	{{/if}}
 	{{> yield}}
 	
 </template>

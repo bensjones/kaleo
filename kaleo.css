@@ -24,6 +24,11 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 1em;
 }
 
+.alert-error{
+	color: red;
+	font-style: bold;
+}
+
 /*LIST/DETAIL VIEW STYLING*/
 
 .layout-buttons, .new-list {
@@ -88,7 +93,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: 0.5em;
 }
 
-.list_input_fields{
+.list_input_fields, #detail_entry{
 	border-radius: 88px;
 }
 
@@ -161,4 +166,9 @@ h1, h2, h3, .container, .btn, .button-text{
 
 .delete_notification{
 	padding-top: -2em;
+}
+
+#no_notifications{
+	margin-left: 3em;
+	padding-left: 3em;
 }

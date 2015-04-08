@@ -25,5 +25,9 @@ Template.layout.helpers({
 
 	notificationsExist: function(){
 		return notificationsCollection.find().count() != 0;
+	},
+
+	isLoggedIn: function(){
+		return Meteor.userId() != null;
 	}
 });
