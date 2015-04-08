@@ -1,5 +1,9 @@
 //client/views/layout/layout.js
 
+Tracker.autorun(function(){
+	Meteor.subscribe('notifications');
+});
+
 Template.layout.events({
 	'click #myKaleo_button': function(ev){
 		$('.new_list_form').css('display', 'none');
@@ -10,7 +14,7 @@ Template.layout.events({
 });
 
 Template.layout.helpers({
-	notifications: function(){
-		return notificationCollection.find({shared_user: this.userId()});
+	notificationsCollection: function(){
+		return notificationsCollection.find({notified_user: Meteor.userId()});
 	}
 });

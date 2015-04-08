@@ -4,5 +4,5 @@ Meteor.publish('notifications', function(){
 	if(!this.userId)
 		return this.ready();
 	else
-		return notificationCollection.find({notified_user: this.userId});
+		return notificationsCollection.find({notified_user: this.userId});
 });
