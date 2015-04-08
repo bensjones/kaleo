@@ -18,8 +18,11 @@
 				  </button>
 				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 				    {{#each notificationsCollection}}
-				    	<div class="btn btn-xs btn-danger" id="delete-notification">x</div>
-			            <li><a href='#'><b>{{notified_user}}</b> shared a list</a></li>
+				    	<a class="btn btn-xs btn-danger delete_notification">x</a>
+				    	<li>
+				    		<a class='notified_user' href='#'><b>{{notified_user}}</b> shared a list</a>
+				    	</li>
+				    	<hr>
 			        {{/each}}
 				  </ul>
 				</div>

@@ -146,10 +146,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	padding-bottm: -2em;
 }
 
-.delete_notification{
-	float: left;
+.dropdown-menu{
+	/*padding-left: 2em;*/
 }
 
-.single_notification{
-	float: right;
+.delete_notification{
+	padding-top: -2em;
 }
