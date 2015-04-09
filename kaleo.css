@@ -29,6 +29,12 @@ h1, h2, h3, .container, .btn, .button-text{
 	font-style: bold;
 }
 
+#by_line{
+	opacity: 0.5;
+	margin-bottom: 2em;
+	margin-top: -0.5em;
+}
+
 /*LIST/DETAIL VIEW STYLING*/
 
 .layout-buttons, .new-list {
