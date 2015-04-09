@@ -32,8 +32,17 @@ Template.listViewTemplate.helpers({
 		return notificationsCollection.find({notified_user: Meteor.userId()});
 	},
 
+	sharedListsExist: function(){
+		return listCollection.find({shared_user: Meteor.userId()}).fetch().length != 0;
+	},
+
 	sharedUserField: function(){
-		return listCollection.find({shared_user: ''});
+		var distinctEntries = _.uniq(listCollection.find({}, 
+		{sort: {shared_user: 1}, fields: {shared_user: true}
+		}).fetch().map(function(x) {
+		    return x.shared_user;
+		}), true);
+		return distinctEntries != '';
 	}
 });
 

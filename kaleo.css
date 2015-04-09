@@ -20,6 +20,10 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-left: 1em;
 }
 
+#myKaleo_button{
+	font-weight: bold;
+}
+
 .login-link-and-dropdown-list{
 	margin-top: 1em;
 }
@@ -115,7 +119,6 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 #no_notifications{
-	/*padding: 1em;*/
 	font-style: italic;
 }
 
