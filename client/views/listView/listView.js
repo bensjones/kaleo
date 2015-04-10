@@ -25,7 +25,7 @@ Template.listViewTemplate.helpers({
 	},
 
 	allUsers: function(){
-		return Meteor.users.find();
+		return Meteor.users.find({}, {fields: {emails: 1}});
 	},
 
 	sharedLists: function(){
@@ -67,11 +67,13 @@ Template.listViewTemplate.events({
 			owner: Meteor.userId(),
 			owner_email: Meteor.users.find({_id: Meteor.userId()}).fetch()[0].emails[0].address,
 			shared_user: $(ev.target).find('[name=shared_user]').val(),
-			shared_user_email: Meteor.users.find({_id: $(ev.target)
-				.find('[name=shared_user]').val()}).fetch()[0].emails[0].address
+			shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()})
+			.fetch()[0].emails[0].address
 		}
 
-		Meteor.call('addList', newList);
+		Meteor.call('addList', newList, function(err, list){
+			return list;
+		});
 		
 		if(!newList.shared_user == ''){
 			Meteor.call('addNotification', newList);
