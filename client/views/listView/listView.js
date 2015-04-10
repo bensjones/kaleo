@@ -67,8 +67,7 @@ Template.listViewTemplate.events({
 			owner: Meteor.userId(),
 			owner_email: Meteor.users.find({_id: Meteor.userId()}).fetch()[0].emails[0].address,
 			shared_user: $(ev.target).find('[name=shared_user]').val(),
-			shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()})
-			.fetch()[0].emails[0].address
+			shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()}).fetch()[0].emails[0].address
 		}
 
 		Meteor.call('addList', newList, function(err, list){
