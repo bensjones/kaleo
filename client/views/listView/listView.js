@@ -36,6 +36,10 @@ Template.listViewTemplate.helpers({
 		return listCollection.find({shared_user: Meteor.userId()}).fetch().length != 0;
 	},
 
+	findUser: function(){
+		return Meteor.users.find()
+	},
+
 	sharedUserField: function(){
 		var distinctEntries = _.uniq(listCollection.find({}, 
 		{sort: {shared_user: 1}, fields: {shared_user: true}
@@ -57,7 +61,9 @@ Template.listViewTemplate.events({
 			description: $(ev.target).find('[name=description]').val(),
 			dateCreated: today.toDateString(),
 			owner: Meteor.userId(),
-			shared_user: $(ev.target).find('[name=shared_user]').val()
+			shared_user: $(ev.target).find('[name=shared_user]').val(),
+			shared_user_email: Meteor.users.find({_id: $(ev.target)
+				.find('[name=shared_user]').val()}).fetch()[0].emails[0].address
 		}
 
 		Meteor.call('addList', newList);
@@ -95,13 +101,6 @@ Template.listViewTemplate.events({
 	'click #edit-list': function(ev){
 		ev.preventDefault();
 		$('.listViewEntry').attr('contentEditable', true);
-	},
-
-	'click #users_button': function(ev){
-		ev.preventDefault();
-		Meteor.call('returnUsers', function(err, users){
-			console.log(users);
-		});
 	},
 
 	'click #share_button': function(ev){
