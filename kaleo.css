@@ -42,6 +42,17 @@ h1, h2, h3, .container, .btn, .button-text{
 	margin-top: -0.5em;
 }
 
+#no_lists_message{
+	margin-top: 2em;
+	color: blue;
+	opacity: 0.7;
+}
+
+#new_list_text{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 /*LIST/DETAIL VIEW STYLING*/
 
 .layout-buttons, .new-list {
@@ -83,7 +94,7 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 .detailViewList{
-	margin-left: -0.5em;
+	margin-left: -4em;
 }
 
 .detailViewEntry .detailCheckbox{

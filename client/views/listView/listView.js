@@ -20,6 +20,10 @@ Template.listViewTemplate.helpers({
 		return listCollection.find({owner: Meteor.userId()});
 	},
 
+	noLists: function(){
+		return listCollection.find({owner: Meteor.userId()}).fetch().length == 0;
+	},
+
 	allUsers: function(){
 		return Meteor.users.find();
 	},

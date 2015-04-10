@@ -33,6 +33,9 @@
 	        <div class="row" id='users_list_row'>
 	        	<ul class='listViewList'>
 	        		<u><h2>my lists</h2></u>
+	        		{{#if noLists}}
+	        			<h4 id='no_lists_message'>click <span id='new_list_text'>new list</span> button to create a new list</h4>
+	        		{{/if}}
 	        		{{#each listCollection}}
 	        		<li class='listViewEntry'>
 	        			<div class="row">
