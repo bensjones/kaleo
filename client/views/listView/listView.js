@@ -75,7 +75,9 @@ Template.listViewTemplate.events({
 		});
 		
 		if(!newList.shared_user == ''){
-			Meteor.call('addNotification', newList);
+			Meteor.call('addNotification', newList, function(err, list){
+				return list;
+			});
 		}
 		
 		$('.form-group').children().val('');
