@@ -24,6 +24,7 @@ h1, h2, h3, .container, .btn, .button-text{
 	font-weight: bold;
 	display: inline-block;
 	background: none;
+	margin-right: 1.5em;
 }
 
 .login-link-and-dropdown-list{
@@ -180,7 +181,5 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 #no_notifications{
-	/*margin-left: 3em;
-	padding-left: 3em;*/
 	display: inline-block;
 }
