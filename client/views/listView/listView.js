@@ -45,12 +45,7 @@ Template.listViewTemplate.helpers({
 	},
 
 	sharedUserField: function(){
-		var distinctEntries = _.uniq(listCollection.find({}, 
-		{sort: {shared_user: 1}, fields: {shared_user: true}
-		}).fetch().map(function(x) {
-		    return x.shared_user;
-		}), true);
-		return distinctEntries != '';
+		
 	}
 });
 
@@ -59,16 +54,21 @@ Template.listViewTemplate.events({
 		ev.preventDefault();
 
 		var today = new Date();
-		
+
 		var newList = {
 			title: $(ev.target).find('[name=title]').val(),
 			description: $(ev.target).find('[name=description]').val(),
 			dateCreated: today.toDateString(),
 			owner: Meteor.userId(),
-			owner_email: Meteor.users.find({_id: Meteor.userId()}).fetch()[0].emails[0].address,
+			// owner_email: Meteor.users.find({_id: Meteor.userId()}).fetch()[0].emails[0].address,
+			owner_email: Meteor.user().emails[0].address,
 			shared_user: $(ev.target).find('[name=shared_user]').val(),
-			shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()}).fetch()[0].emails[0].address
+			// shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()}).fetch()[0].emails[0].address
+			shared_user_email: shared_user_email_field
 		}
+
+		var shared_user_email_field = (newList.shared_user != '') ? Meteor.users.find({_id: $(ev.target).find('[name=shared_user]')
+			.val()}).fetch()[0].emails[0].address : '';
 
 		Meteor.call('addList', newList, function(err, list){
 			return list;
