@@ -2,7 +2,6 @@
 
 body{
 	background-image: url('/bg.png');
-	height: 1000px;
 	line-height: 1.2;
 }
 
@@ -51,6 +50,10 @@ h1, h2, h3, .container, .btn, .button-text{
 #new_list_text{
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+#margin_below_my_lists, #margin_below_shared_lists{
+	margin-bottom: 15em;
 }
 
 /*LIST/DETAIL VIEW STYLING*/

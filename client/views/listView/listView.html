@@ -53,6 +53,9 @@
 	        		{{/each}}
 	        	</ul>
 	        </div>
+	        {{#unless sharedListsExist}}
+	        	<div id='margin_below_my_lists'></div>
+	        {{/unless}}
 	        {{#if sharedListsExist}}
 	        <div class="row">
 	        	<ul class='sharedListsList'>
@@ -72,6 +75,7 @@
 	        		{{/each}}
 	        	</ul>
 	        </div>
+	        <div id='margin_below_shared_lists'></div>
 	        {{/if}}
 	    </div>
 	</div>
