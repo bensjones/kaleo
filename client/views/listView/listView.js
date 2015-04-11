@@ -45,7 +45,8 @@ Template.listViewTemplate.helpers({
 	},
 
 	sharedUserField: function(){
-		
+		var single_list_shared_user_field = listCollection.findOne({_id: this._id}).shared_user;
+		return single_list_shared_user_field != '';
 	}
 });
 
@@ -60,14 +61,12 @@ Template.listViewTemplate.events({
 			description: $(ev.target).find('[name=description]').val(),
 			dateCreated: today.toDateString(),
 			owner: Meteor.userId(),
-			// owner_email: Meteor.users.find({_id: Meteor.userId()}).fetch()[0].emails[0].address,
 			owner_email: Meteor.user().emails[0].address,
 			shared_user: $(ev.target).find('[name=shared_user]').val(),
-			// shared_user_email: Meteor.users.find({_id: $(ev.target).find('[name=shared_user]').val()}).fetch()[0].emails[0].address
-			shared_user_email: shared_user_email_field
+			shared_user_email: ''
 		}
 
-		var shared_user_email_field = (newList.shared_user != '') ? Meteor.users.find({_id: $(ev.target).find('[name=shared_user]')
+		newList.shared_user_email = (newList.shared_user != '') ? Meteor.users.find({_id: $(ev.target).find('[name=shared_user]')
 			.val()}).fetch()[0].emails[0].address : '';
 
 		Meteor.call('addList', newList, function(err, list){
