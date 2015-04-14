@@ -33,10 +33,6 @@ Template.detailsViewTemplate.helpers({
 	}
 });
 
-Template.detailsViewTemplate.onCreated(function(){
-	// Session.setPersistent('class', 'untoggle');
-});
-
 Template.detailsViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
@@ -62,28 +58,12 @@ Template.detailsViewTemplate.events({
 	'click .detailCheckbox': function(ev){
 		var detail = $(ev.target).parent();
 
-		// if(!detail.hasClass('toggle')){
-		// 	Session.setPersistent('var', 'toggle');
-  // 			// detail.fadeTo(200, Session.get('opacity'));
-  // 			detail.addClass(Session.get('var'));
-  // 			console.log(Session);
-		// } else {
-		// 	Session.setPersistent('var', 'untoggle');
-		// 	// detail.fadeTo(200, Session.get('opacity'));
-		// 	detail.removeClass('toggle');
-		// 	detail.addClass(Session.get('var'));
-		// }
-
-		if(Session.get('class') != 'toggle'){
-			Session.setPersistent('class', 'toggle');
+		if(!detail.hasClass('toggle')){
+			detail.addClass('toggle');	
 		} else {
 			detail.removeClass('toggle');
-			Session.setPersistent('class', 'untoggle');
 		}
-
-		console.log(Session.get('class'));
-		detail.addClass(Session.get('class'));
-
+		
 	},
 
 	'click #delete-list': function(ev){
