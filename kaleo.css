@@ -80,7 +80,6 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 .listViewList{
-	margin-top: 1em;
 	float: left;
 }
 
@@ -112,16 +111,21 @@ h1, h2, h3, .container, .btn, .button-text{
 	opacity: 1;
 }
 
-.users_list_row{
-	/*margin-top: -5em;*/
-}
-
 .shared_user_row, .list_owner_row{
 	margin-top: 0.5em;
 }
 
 .list_input_fields, #detail_entry{
 	border-radius: 88px;
+}
+
+#shared_list{
+	margin-top: 12em;
+	padding-top: 12em;
+}
+
+#lists_row{
+	margin-top: 1em;
 }
 
 /*BUTTON DESIGN*/
@@ -133,7 +137,6 @@ h1, h2, h3, .container, .btn, .button-text{
 .myKaleo .button-text, #new-list-button, #no_notifications{
 	color: black;
 	opacity: 0.7;
-	/*float: left;*/
 }
 
 #no_notifications{

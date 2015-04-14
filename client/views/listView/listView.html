@@ -30,8 +30,8 @@
 	            <button type="submit" class="btn btn-primary btn_style" id='create_button'>create</button>
 	            <!-- <button type='button' class="btn btn-default" id='users_button'>users</button> -->
 		    </form>
-		    <div class="row">
-		        <div class="col-sm-6" id='users_list_row'>
+		    <div class="row" id='lists_row'>
+		        <div class="col-sm-6">
 		        	<ul class='listViewList'>
 		        		<u><h2>my lists</h2></u>
 		        		{{#if noLists}}
@@ -54,9 +54,6 @@
 		        		{{/each}}
 		        	</ul>
 		        </div>
-		        {{#unless sharedListsExist}}
-		        	<div id='margin_below_my_lists'></div>
-		        {{/unless}}
 		        {{#if sharedListsExist}}
 		        <div class="col-sm-6">
 		        	<ul class='sharedListsList'>
@@ -76,7 +73,6 @@
 		        		{{/each}}
 		        	</ul>
 		        </div>
-	        <div id='margin_below_shared_lists'></div>
 	        {{/if}}
 	       </div>
 	    </div>
