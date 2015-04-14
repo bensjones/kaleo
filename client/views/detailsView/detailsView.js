@@ -33,6 +33,15 @@ Template.detailsViewTemplate.helpers({
 	}
 });
 
+Template.detailsViewTemplate.onRendered(function(){
+	if(document.cookie === ''){
+		var x = document.cookie = 'normal';
+		Session.set('css', x);
+	} else {
+		Session.set('css', document.cookie)
+	}
+});
+
 Template.detailsViewTemplate.events({
 	'submit form': function(ev){
 		ev.preventDefault();
@@ -56,15 +65,20 @@ Template.detailsViewTemplate.events({
 	},
 
 	'click .detailCheckbox': function(ev){
-		// var detail = $(ev.target).parent();
+		ev.preventDefault();
 
-		// if(!detail.hasClass('toggle')){
-		// 	detail.addClass('toggle');	
-		// } else {
-		// 	detail.removeClass('toggle');
-		// }
+		var detail = $(ev.target).parent();
 
-		createCookie('')
+		if(detail.css('opacity') == 1){
+			createCookie('opaque', 0.4, 14);
+			var opaque_detail = readCookie('opaque');
+			Session.set('css', opaque_detail);
+		} else {
+			createCookie('clear', '1', 14);
+			var clear_detail = readCookie('clear');
+			Session.set('css', clear_detail);
+		}
+
 		
 	},
 
