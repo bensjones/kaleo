@@ -113,7 +113,7 @@ h1, h2, h3, .container, .btn, .button-text{
 }
 
 .users_list_row{
-	margin-top: -5em;
+	/*margin-top: -5em;*/
 }
 
 .shared_user_row, .list_owner_row{
@@ -133,6 +133,7 @@ h1, h2, h3, .container, .btn, .button-text{
 .myKaleo .button-text, #new-list-button, #no_notifications{
 	color: black;
 	opacity: 0.7;
+	/*float: left;*/
 }
 
 #no_notifications{
