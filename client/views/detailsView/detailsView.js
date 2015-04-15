@@ -38,7 +38,7 @@ Template.detailsViewTemplate.helpers({
 });
 
 Template.detailsViewTemplate.onRendered(function(){
-	if(document.cookie === ''){
+	if(document.cookie){
 		var opaque = document.cookie = 'toggle';
 		Session.set('css', opaque);
 	} else {
