@@ -30,13 +30,17 @@ Router.route('detailsView', {
 Template.detailsViewTemplate.helpers({
 	detailsCollection: function(){
 		return detailsCollection.find();
+	},
+
+	cookie: function(){
+		return Session.get('css');
 	}
 });
 
 Template.detailsViewTemplate.onRendered(function(){
 	if(document.cookie === ''){
-		var x = document.cookie = 'normal';
-		Session.set('css', x);
+		var opaque = document.cookie = 'toggle';
+		Session.set('css', opaque);
 	} else {
 		Session.set('css', document.cookie)
 	}
@@ -61,25 +65,20 @@ Template.detailsViewTemplate.events({
 		if (result){
 			Meteor.call('deleteDetail', this._id);
 		}
-		
 	},
 
 	'click .detailCheckbox': function(ev){
-		ev.preventDefault();
 
 		var detail = $(ev.target).parent();
 
 		if(detail.css('opacity') == 1){
-			createCookie('opaque', 0.4, 14);
-			var opaque_detail = readCookie('opaque');
-			Session.set('css', opaque_detail);
+			var opaque = document.cookie = 'toggle';
+			Session.set('css', opaque);
 		} else {
-			createCookie('clear', '1', 14);
-			var clear_detail = readCookie('clear');
+			var clear_detail = document.cookie = 1; 
 			Session.set('css', clear_detail);
 		}
 
-		
 	},
 
 	'click #delete-list': function(ev){
