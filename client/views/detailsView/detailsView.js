@@ -68,6 +68,7 @@ Template.detailsViewTemplate.events({
 	},
 
 	'click .detailCheckbox': function(ev){
+		ev.preventDefault();
 
 		var detail = $(ev.target).parent();
 
