@@ -12,7 +12,7 @@
 			<u><h3>details</h3></u>
 			<ul class='detailViewList'>
 				{{#each detailsCollection}}
-				<li class='detailViewEntry {{cookie}}'>
+				<li id={{detail_id}} class='detailViewEntry {{cookie}}'>
 					<input type="checkbox" class='detailCheckbox'>
 					<b>{{detail}}</b>
 					<div class="btn btn-xs btn-danger" id="delete-detail">x</div>
